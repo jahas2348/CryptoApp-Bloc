@@ -1,15 +1,16 @@
 
 import 'package:cryptofy/data/datasources/home_watchlist.dart';
 import 'package:cryptofy/domain/models/coin_data_model.dart';
-import 'package:cryptofy/presentation/blocs/watchlist_bloc/watchlist_bloc.dart';
 import 'package:cryptofy/presentation/blocs/watchlist_bloc/watchlist_event.dart';
 import 'package:cryptofy/presentation/constants/color_styles/colors.dart';
 import 'package:cryptofy/presentation/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../blocs/watchlist_bloc/watchlist_bloc.dart';
+
 // ignore: must_be_immutable
-class CoinSubCard extends StatelessWidget {
+class CoinWatchListSubCard extends StatelessWidget {
   String rank;
   String logoUrl;
   String coinName;
@@ -18,7 +19,7 @@ class CoinSubCard extends StatelessWidget {
   double coinVariation;
   final CoinDataModel coin;
 
-  CoinSubCard({
+  CoinWatchListSubCard({
     required this.rank,
     required this.logoUrl,
     required this.coinName,
@@ -26,7 +27,6 @@ class CoinSubCard extends StatelessWidget {
     required this.coinPrice,
     required this.coinVariation,
     required this.coin,
-    super.key,
   });
 
   @override
@@ -35,10 +35,9 @@ class CoinSubCard extends StatelessWidget {
     bool isVariationNegative = coinVariation < 0;
     
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
       child: Container(
         decoration: BoxDecoration(
-
           // gradient: LinearGradient(
           //   colors: [Colors.grey.withOpacity(0.2),Colors.grey.withOpacity(0.0)],
           //   begin: Alignment.topCenter,
@@ -114,16 +113,10 @@ class CoinSubCard extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () async {
-                          if(!watchList.contains(coin)){
-                        watchList.add(coin);
-                         context
+                          context
                         .read<WatchlistBloc>()
-                        .add(WatchListAddEvent(watchList: watchList));
-                        await  showSnackbar(context, 'Coin has been added to Watchlist');
-                    }else{
-                     
-                      await  showSnackbar(context, 'Already added to Watchlist');
-                    }
+                        .add(WatchListRemoveEvent(watchList: watchList,coin: coin));
+                         await  showSnackbar(context, 'Coin has been removed from Watchlist');
                         },
                         child: Icon(
                           Icons.star_border_rounded,
