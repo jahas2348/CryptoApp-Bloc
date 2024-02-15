@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:cryptofy_app/data/repositories/crypto_repo.dart';
-import 'package:cryptofy_app/domain/models/coin_data_model.dart';
-import 'package:cryptofy_app/presentation/blocs/home_bloc/crypto_state.dart';
+import 'package:cryptofy/data/repositories/crypto_repo.dart';
+import 'package:cryptofy/domain/models/coin_data_model.dart';
+import 'package:cryptofy/presentation/blocs/home_bloc/crypto_state.dart';
 import 'package:http/http.dart' as http;
 
 class GetCryptoUseCase {

@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:cryptofy_app/domain/usecases/get_crypto_usecase.dart';
-import 'package:cryptofy_app/presentation/blocs/home_bloc/crypto_event.dart';
-import 'package:cryptofy_app/presentation/blocs/home_bloc/crypto_state.dart';
+import 'package:cryptofy/domain/usecases/get_crypto_usecase.dart';
+import 'package:cryptofy/presentation/blocs/home_bloc/crypto_event.dart';
+import 'package:cryptofy/presentation/blocs/home_bloc/crypto_state.dart';
 
 class CryptoBloc extends Bloc<CryptoEvent, CryptoState> {
   CryptoBloc() : super(CryptoInitialState()) {

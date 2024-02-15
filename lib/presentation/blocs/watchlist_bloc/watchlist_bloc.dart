@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:cryptofy_app/data/datasources/home_watchlist.dart';
-import 'package:cryptofy_app/presentation/blocs/watchlist_bloc/watchlist_event.dart';
-import 'package:cryptofy_app/presentation/blocs/watchlist_bloc/watchlist_state.dart';
+import 'package:cryptofy/data/datasources/home_watchlist.dart';
+import 'package:cryptofy/presentation/blocs/watchlist_bloc/watchlist_event.dart';
+import 'package:cryptofy/presentation/blocs/watchlist_bloc/watchlist_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 

@@ -1,4 +1,4 @@
-import 'package:cryptofy_app/data/datasources/crypto_api.dart';
+import 'package:cryptofy/data/datasources/crypto_api.dart';
 import 'package:http/http.dart' as http;
 
 class CryptoRepo {
