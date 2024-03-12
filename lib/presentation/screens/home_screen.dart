@@ -23,12 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
     context.read<WatchlistBloc>().add(WatchListInitialEvent());
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        
         appBar: AppBar(
           toolbarHeight: 60,
           backgroundColor: CustomColors.appBarColor,
@@ -38,16 +38,24 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             InkWell(
-              onTap: () {
-                context.read<CryptoBloc>().add(InitialEvent());
-              },
-              child: Icon(Icons.downloading_outlined, size: 30,)),
+                onTap: () {
+                  context.read<CryptoBloc>().add(InitialEvent());
+                },
+                child: Icon(
+                  Icons.downloading_outlined,
+                  size: 30,
+                )),
             SizedBox(
               width: 20,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 14),
-              child: Image(image: AssetImage('assets/images/crptofy-logo.png',), width: 35,),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 14),
+              child: Image(
+                image: AssetImage(
+                  'assets/images/crptofy-logo.png',
+                ),
+                width: 35,
+              ),
             ),
             SizedBox(
               width: 20,
@@ -62,10 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               child: TabBar(
-              dividerColor: Colors.white,
-              // indicatorColor: Colors.amber,
-            
-                // indicatorPadding: EdgeInsets.symmetric(horizontal: 20),
+                dividerColor: Colors.white,
+                indicatorColor: Color.fromARGB(255, 141, 255, 116),
+                indicatorPadding: EdgeInsets.symmetric(horizontal: 20),
                 tabs: [
                   Tab(
                     child: Text(
